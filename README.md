@@ -1,4 +1,5 @@
 # AWS S3 Automated Backup System
+![AutomatedBackUpDiagram](https://github.com/user-attachments/assets/f3e65954-4f85-4c07-a249-53fc58c69373)
 
 An automated backup solution that copies files from a source S3 bucket into three dedicated backup buckets based on folder organization, with scheduled execution and notification alerts.
 
