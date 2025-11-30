@@ -32,35 +32,7 @@ An automated backup solution that copies files from a source S3 bucket into thre
 
 This project implements an automated backup system using AWS serverless services. Files stored in a source S3 bucket are automatically copied to three separate backup buckets based on their folder structure (documents, photos, database). The system runs on a schedule and sends notifications after each backup operation.
 
-## Architecture
 
-```
-┌─────────────────┐
-│  Source Bucket  │
-│   documents/    │
-│   photos/       │
-│   database/     │
-└────────┬────────┘
-         │
-    ┌────▼─────┐
-    │EventBridge│
-    └────┬─────┘
-         │ Triggers
-    ┌────▼────┐
-    │ Lambda  │
-    └────┬────┘
-         │
-    ┌────▼────────────────────────┐
-    │                             │
-┌───▼────┐  ┌──────▼──┐  ┌───▼───┐
-│Documents│  │  Photos │  │Database│
-│ Backup  │  │  Backup │  │ Backup │
-└─────────┘  └─────────┘  └────────┘
-         │
-    ┌────▼────┐
-    │   SNS   │
-    └─────────┘
-```
 
 **Services Used:**
 - **Amazon S3** - Storage for source and backup files
